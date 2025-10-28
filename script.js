@@ -39,5 +39,16 @@ document.getElementById("next-btn").addEventListener("click", function() {
     displayCard();
 });
 
+document.getElementById("add-card-btn").addEventListener("click", function() {
+    const term = document.getElementById("new-term").value;
+    const definition = document.getElementById("new-definition").value;
+    
+    if (term !== "" && definition != "") {
+        flashcards.push({ term: term, definition: definition });
+        document.getElementById("new-term").value = "";
+        document.getElementById("new-definition").value = "";
+    }
+});
+
 // This line will display the card when the page is refreshed
 window.onload = displayCard;
